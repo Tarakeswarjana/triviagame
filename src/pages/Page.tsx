@@ -13,7 +13,7 @@ function Page() {
     const writeans1 = writeans.replace(/\s/g, "");
 
     const inpans1 = inpans.replace(/\s/g, "");
-    console.log(inpans1);
+    // console.log(inpans1);
     if (writeans1 === inpans1) {
       setresstate(true);
     } else {
@@ -27,17 +27,17 @@ function Page() {
     axios
       .get("https://opentdb.com/api.php?amount=1")
       .then((res) => {
-        console.log(res);
+        //console.log(res);
         setquesdata(res.data.results[0].question);
         let arr = res.data.results[0].incorrect_answers;
 
         arr.push(res.data.results[0].correct_answer);
-        console.log(arr);
+        //console.log(arr);
         setworngans(arr);
         setwriteans(res.data.results[0].correct_answer);
       })
       .catch((err) => {
-        console.log(err);
+        //console.log(err);
       });
   };
   useEffect(() => {
